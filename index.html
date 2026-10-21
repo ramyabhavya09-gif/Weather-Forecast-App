@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search for a city and check current weather conditions.">
+  <title>Weather Forecast App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="weather-app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">YOUR DAILY WEATHER</p>
+        <h1>Weather App <span>🌦️</span></h1>
+        <p class="subtitle">Discover the weather anywhere.</p>
+      </div>
+    </header>
+
+    <form id="search-form" class="search-form">
+      <label class="sr-only" for="city-input">Enter city name</label>
+      <input
+        id="city-input"
+        type="search"
+        placeholder="Enter city name..."
+        autocomplete="off"
+        maxlength="100"
+        required
+      >
+      <button id="search-button" type="submit">Search</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite">
+      Search for a city to see its weather.
+    </p>
+
+    <section id="weather-card" class="weather-card" hidden>
+      <div class="location">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="city-name">City</h2>
+          <p id="local-time" class="local-time"></p>
+        </div>
+        <span id="weather-icon" class="weather-icon" aria-hidden="true">☀️</span>
+      </div>
+
+      <div class="temperature-area">
+        <p id="temperature" class="temperature">--°C</p>
+        <p id="condition" class="condition">Weather condition</p>
+      </div>
+
+      <div class="weather-details">
+        <article class="detail">
+          <span class="detail-icon" aria-hidden="true">💧</span>
+          <div>
+            <p>Humidity</p>
+            <h3 id="humidity">--%</h3>
+          </div>
+        </article>
+
+        <article class="detail">
+          <span class="detail-icon" aria-hidden="true">💨</span>
+          <div>
+            <p>Wind Speed</p>
+            <h3 id="wind-speed">-- km/h</h3>
+          </div>
+        </article>
+      </div>
+
+      <p class="updated" id="updated-time"></p>
+    </section>
+
+    <footer>
+      <p>Weather data by
+        <a href="https://open-meteo.com/" target="_blank"
+           rel="noopener noreferrer">Open-Meteo</a>
+      </p>
+      <p>Built with HTML, CSS &amp; JavaScript</p>
+    </footer>
+  </main>
+</body>
+  </html>
+  
